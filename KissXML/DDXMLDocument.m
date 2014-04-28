@@ -120,7 +120,7 @@
         if (doc == NULL)
         {
             #if DDXML_FALLBACK_ON_HTML
-               htmlParserCtxtPtr ctx = htmlCreateMemoryParserCtxt([data bytes], [data length]);
+               htmlParserCtxtPtr ctx = htmlCreateMemoryParserCtxt([data bytes], (int)[data length]);
                int err = htmlParseDocument(ctx);
                if(err == 0) {
                    doc = ctx->myDoc;
