@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1AD76A791A1278920046CA69 /* DDXMLTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD76A771A1276BE0046CA69 /* DDXMLTesting.m */; };
 		1AD76A7B1A1279180046CA69 /* DDXMLNodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD76A7A1A1279180046CA69 /* DDXMLNodeTests.m */; };
+		1AD76A7C1A127B680046CA69 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC05A4A1361DB8200993C2A /* DDXMLNode.m */; };
+		1AD76A7D1A127B6D0046CA69 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC05A481361DB8200993C2A /* DDXMLElement.m */; };
+		1AD76A7E1A127B710046CA69 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC05A461361DB8200993C2A /* DDXMLDocument.m */; };
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -326,6 +329,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AD76A7B1A1279180046CA69 /* DDXMLNodeTests.m in Sources */,
+				1AD76A7C1A127B680046CA69 /* DDXMLNode.m in Sources */,
+				1AD76A7E1A127B710046CA69 /* DDXMLDocument.m in Sources */,
+				1AD76A7D1A127B6D0046CA69 /* DDXMLElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
