@@ -424,7 +424,11 @@ static void MarkDeath(void *xmlPtr, DDXMLNode *wrapper);
 	}
 	
 	NSString *name = [NSString stringWithUTF8String:(const char *)xmlName];
-	if ([name isEqualToString:@"text"]) return nil; // If node is a textnode NSXMLDocument return <nil>, also what the Mac expects, KissXML returns 'text'
+	
+	if ([name isEqualToString:@"text"] && self.kind == DDXMLTextKind)
+	{
+		return nil;
+	}	// If node is a textnode NSXMLDocument return <nil>, also what the Mac expects, KissXML returns 'text'
 
 	if (IsXmlNodePtr(genericPtr))
 	{
