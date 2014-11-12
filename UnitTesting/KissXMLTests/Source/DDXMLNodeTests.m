@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
-#import "DDXMLDocument.h"
+#import "DDXML.h"
 
 @interface DDXMLNodeTests : XCTestCase
 
@@ -24,8 +24,11 @@
 {
     [super setUp];
 	
+	self.DDXMLDocument= [[DDXMLDocument alloc] init];
+	
 	NSXMLElement *NSRootElement = [[NSXMLElement alloc] initWithName:@"Test"];
-	DDXMLElement *DDRootElement = [[DDXMLElement alloc] initWithName:@"Test"];
+	DDXMLElement *DDRootElement = self.DDXMLDocument.rootElement;
+	DDRootElement.name = @"Test";
 	
 	[NSRootElement addAttribute:[NSXMLNode attributeWithName:@"TestAttributeA" stringValue:@"TestValueA"]];
 	[DDRootElement addAttribute:[DDXMLNode attributeWithName:@"TestAttributeA" stringValue:@"TestValueA"]];
@@ -54,12 +57,13 @@
 	[NSRootElement addChild:NSChildElementB];
 	[DDRootElement addChild:DDChildElementB];
 	
-	self.NSXMLDocument= [NSXMLDocument documentWithRootElement:NSRootElement];
-	self.DDXMLDocument= [DDXMLDocument documentWithRootElement:DDRootElement];
+	self.NSXMLDocument= [[NSXMLDocument alloc] initWithRootElement:NSRootElement];
 }
 
 - (void)tearDown
 {
+	self.NSXMLDocument = nil;
+	self.DDXMLDocument = nil;
 	
     [super tearDown];
 }
