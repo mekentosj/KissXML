@@ -58,6 +58,12 @@
 	[NSRootElement addChild:NSChildElementB];
 	[DDRootElement addChild:DDChildElementB];
 	
+	NSXMLNode *NSTextNode = [NSXMLNode textWithStringValue:@"TestTextValueA"];
+	DDXMLNode *DDTextNode = [DDXMLNode textWithStringValue:@"TestTextValueA"];
+	
+	[NSRootElement addChild:NSTextNode];
+	[DDRootElement addChild:DDTextNode];
+	
 	self.NSXMLDocument= [[NSXMLDocument alloc] initWithRootElement:NSRootElement];
 }
 
@@ -93,7 +99,21 @@
 	NSString *testName = testAttribute.name;
 	NSString *realName = realAttribute.name;
 	
-	XCTAssertEqualObjects(testName, realName, @"DDXLElement name (%@) should be equal to NSXMLElement name (%@).", testName, realName);
+	XCTAssertEqualObjects(testName, realName, @"DDXLNode name (%@) should be equal to NSXMLNode name (%@).", testName, realName);
+}
+
+- (void)testTextNodeName
+{
+	DDXMLElement *testRootElement = self.DDXMLDocument.rootElement;
+	NSXMLElement *realRootElement = self.NSXMLDocument.rootElement;
+	
+	DDXMLNode *testNode = testRootElement.children.lastObject;
+	NSXMLNode *realNode = realRootElement.children.lastObject;
+	
+	NSString *testName = testNode.name;
+	NSString *realName = realNode.name;
+	
+	XCTAssertEqualObjects(testName, realName, @"DDXLNode name (%@) should be equal to NSXMLNode name (%@).", testName, realName);
 }
 
 @end
