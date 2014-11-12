@@ -20,15 +20,16 @@
 
 @implementation DDXMLNodeTests
 
+#pragma mark - Set Up
+
 - (void)setUp
 {
     [super setUp];
 	
-	self.DDXMLDocument= [[DDXMLDocument alloc] init];
+	self.DDXMLDocument= [[DDXMLDocument alloc] initWithXMLString:@"<Test/>" options:kNilOptions error:nil];
 	
 	NSXMLElement *NSRootElement = [[NSXMLElement alloc] initWithName:@"Test"];
 	DDXMLElement *DDRootElement = self.DDXMLDocument.rootElement;
-	DDRootElement.name = @"Test";
 	
 	[NSRootElement addAttribute:[NSXMLNode attributeWithName:@"TestAttributeA" stringValue:@"TestValueA"]];
 	[DDRootElement addAttribute:[DDXMLNode attributeWithName:@"TestAttributeA" stringValue:@"TestValueA"]];
@@ -66,6 +67,33 @@
 	self.DDXMLDocument = nil;
 	
     [super tearDown];
+}
+
+#pragma mark - Property Tests
+
+- (void)testElementName
+{
+	DDXMLElement *testRootElement = self.DDXMLDocument.rootElement;
+	NSXMLElement *realRootElement = self.NSXMLDocument.rootElement;
+	
+	NSString *testName = testRootElement.name;
+	NSString *realName = realRootElement.name;
+	
+	XCTAssertEqualObjects(testName, realName, @"DDXLElement name (%@) should be equal to NSXMLElement name (%@).", testName, realName);
+}
+
+- (void)testNodeName
+{
+	DDXMLElement *testRootElement = self.DDXMLDocument.rootElement;
+	NSXMLElement *realRootElement = self.NSXMLDocument.rootElement;
+	
+	DDXMLNode *testAttribute = testRootElement.attributes[0];
+	NSXMLNode *realAttribute = realRootElement.attributes[0];
+	
+	NSString *testName = testAttribute.name;
+	NSString *realName = realAttribute.name;
+	
+	XCTAssertEqualObjects(testName, realName, @"DDXLElement name (%@) should be equal to NSXMLElement name (%@).", testName, realName);
 }
 
 @end
