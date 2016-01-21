@@ -23,13 +23,12 @@
  * https://github.com/robbiehanson/KissXML/wiki/Reference
 **/
 
-enum {
+typedef NS_ENUM(NSUInteger, DDXMLDocumentContentKind) {
 	DDXMLDocumentXMLKind = 0,
 	DDXMLDocumentXHTMLKind,
 	DDXMLDocumentHTMLKind,
 	DDXMLDocumentTextKind
 };
-typedef NSUInteger DDXMLDocumentContentKind;
 
 enum {
     DDXMLDocumentTidyHTML = 1UL << 9,

@@ -21,7 +21,7 @@
  * https://github.com/robbiehanson/KissXML/wiki/Reference
 **/
 
-enum {
+typedef NS_ENUM(NSUInteger, DDXMLNodeKind) {
 	DDXMLInvalidKind                = 0,
 	DDXMLDocumentKind               = XML_DOCUMENT_NODE,
 	DDXMLElementKind                = XML_ELEMENT_NODE,
@@ -36,7 +36,6 @@ enum {
 	DDXMLElementDeclarationKind     = XML_ELEMENT_DECL,
 	DDXMLNotationDeclarationKind    = XML_NOTATION_NODE
 };
-typedef NSUInteger DDXMLNodeKind;
 
 enum {
 	DDXMLNodeOptionsNone            = 0,
