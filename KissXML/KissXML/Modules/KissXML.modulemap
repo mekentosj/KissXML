@@ -1,0 +1,11 @@
+framework module KissXML {
+    umbrella header "KissXML.h"
+    
+    export *
+    module * { export * }
+    
+    explicit module Private {
+        header "DDXMLPrivate.h"
+        export *
+    }
+}

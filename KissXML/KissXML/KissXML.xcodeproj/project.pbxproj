@@ -21,7 +21,7 @@
 		5F7E44C41C58F2EE0007FCA0 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E44AD1C58F2EE0007FCA0 /* DDXMLElement.m */; };
 		5F7E44C51C58F2EE0007FCA0 /* DDXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7E44AE1C58F2EE0007FCA0 /* DDXMLNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F7E44C61C58F2EE0007FCA0 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E44AF1C58F2EE0007FCA0 /* DDXMLNode.m */; };
-		5F7E44CB1C58F2EE0007FCA0 /* DDXMLPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7E44BB1C58F2EE0007FCA0 /* DDXMLPrivate.h */; };
+		5F7E44CB1C58F2EE0007FCA0 /* DDXMLPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7E44BB1C58F2EE0007FCA0 /* DDXMLPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F7E44D01C58F3810007FCA0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7E44CC1C58F3340007FCA0 /* libxml2.tbd */; };
 /* End PBXBuildFile section */
 
@@ -396,6 +396,7 @@
 				INFOPLIST_FILE = KissXML/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = $SRCROOT/Modules/KissXML.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mekentosj.KissXML;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -412,6 +413,7 @@
 				INFOPLIST_FILE = KissXML/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = $SRCROOT/Modules/KissXML.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mekentosj.KissXML;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
