@@ -1,6 +1,4 @@
 #import <Foundation/Foundation.h>
-#import <libxml/parser.h>
-#import <libxml/HTMLparser.h>
 
 @class DDXMLElement;
 @class DDXMLNode;
