@@ -1,0 +1,3 @@
+[submodule "Carthage/Checkouts/libxml2-module-clang"]
+	path = Carthage/Checkouts/libxml2-module-clang
+	url = ssh://git@github.com/cantinac/libxml2-module-clang.git
