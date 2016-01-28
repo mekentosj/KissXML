@@ -1,7 +1,7 @@
 #import "DDXMLPrivate.h"
 #import "NSString+DDXML.h"
-#import <libxml/parser.h>
-#import <libxml/HTMLparser.h>
+
+@import xml;
 
 #ifdef PAPERS_APP_IOS
     #import "CTidy.h"
