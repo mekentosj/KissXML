@@ -19,6 +19,8 @@
 #import "DDXMLNode.h"
 #import "DDXMLElement.h"
 #import "DDXMLDocument.h"
+#import "DDXMLDocument+HTML.h"
+#import "DDXMLDocument+MTFoundationAdditions.h"
 
 
 // Since KissXML is a drop in replacement for NSXML,

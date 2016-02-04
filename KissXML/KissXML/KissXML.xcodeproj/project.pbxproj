@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AA6AE411C63629C0097D204 /* DDXMLDocument+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AA6AE3C1C63629C0097D204 /* DDXMLDocument+HTML.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AA6AE421C63629C0097D204 /* DDXMLDocument+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6AE3D1C63629C0097D204 /* DDXMLDocument+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1AA6AE431C63629C0097D204 /* DDXMLDocument+MTFoundationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AA6AE3E1C63629C0097D204 /* DDXMLDocument+MTFoundationAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AA6AE441C63629C0097D204 /* DDXMLDocument+MTFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6AE3F1C63629C0097D204 /* DDXMLDocument+MTFoundationAdditions.m */; };
 		5F7E448D1C58F2E00007FCA0 /* KissXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F7E448C1C58F2E00007FCA0 /* KissXML.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F7E44941C58F2E00007FCA0 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7E44891C58F2E00007FCA0 /* KissXML.framework */; };
 		5F7E44991C58F2E00007FCA0 /* KissXMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E44981C58F2E00007FCA0 /* KissXMLTests.m */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AA6AE3C1C63629C0097D204 /* DDXMLDocument+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDXMLDocument+HTML.h"; sourceTree = "<group>"; };
+		1AA6AE3D1C63629C0097D204 /* DDXMLDocument+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDXMLDocument+HTML.m"; sourceTree = "<group>"; };
+		1AA6AE3E1C63629C0097D204 /* DDXMLDocument+MTFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDXMLDocument+MTFoundationAdditions.h"; sourceTree = "<group>"; };
+		1AA6AE3F1C63629C0097D204 /* DDXMLDocument+MTFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDXMLDocument+MTFoundationAdditions.m"; sourceTree = "<group>"; };
 		5F7E44891C58F2E00007FCA0 /* KissXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KissXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7E448C1C58F2E00007FCA0 /* KissXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KissXML.h; sourceTree = "<group>"; };
 		5F7E448E1C58F2E00007FCA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,9 +84,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AA6AE3A1C63629C0097D204 /* DDXML+HTML */ = {
+			isa = PBXGroup;
+			children = (
+				1AA6AE3C1C63629C0097D204 /* DDXMLDocument+HTML.h */,
+				1AA6AE3D1C63629C0097D204 /* DDXMLDocument+HTML.m */,
+				1AA6AE3E1C63629C0097D204 /* DDXMLDocument+MTFoundationAdditions.h */,
+				1AA6AE3F1C63629C0097D204 /* DDXMLDocument+MTFoundationAdditions.m */,
+			);
+			path = "DDXML+HTML";
+			sourceTree = "<group>";
+		};
 		5F7E447F1C58F2E00007FCA0 = {
 			isa = PBXGroup;
 			children = (
+				1AA6AE3A1C63629C0097D204 /* DDXML+HTML */,
 				5F7E44CE1C58F3440007FCA0 /* Foundation.framework */,
 				5F7E44CC1C58F3340007FCA0 /* libxml2.tbd */,
 				5F7E44A91C58F2EE0007FCA0 /* DDXML.h */,
@@ -165,9 +185,11 @@
 				5F7E44C11C58F2EE0007FCA0 /* DDXMLDocument.h in Headers */,
 				5F7E44C51C58F2EE0007FCA0 /* DDXMLNode.h in Headers */,
 				5F7E44BC1C58F2EE0007FCA0 /* DDXMLElementAdditions.h in Headers */,
+				1AA6AE411C63629C0097D204 /* DDXMLDocument+HTML.h in Headers */,
 				5F7E44C01C58F2EE0007FCA0 /* DDXML.h in Headers */,
 				5F7E44BE1C58F2EE0007FCA0 /* NSString+DDXML.h in Headers */,
 				5F7E44CB1C58F2EE0007FCA0 /* DDXMLPrivate.h in Headers */,
+				1AA6AE431C63629C0097D204 /* DDXMLDocument+MTFoundationAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +290,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F7E44C41C58F2EE0007FCA0 /* DDXMLElement.m in Sources */,
+				1AA6AE421C63629C0097D204 /* DDXMLDocument+HTML.m in Sources */,
+				1AA6AE441C63629C0097D204 /* DDXMLDocument+MTFoundationAdditions.m in Sources */,
 				5F7E44C61C58F2EE0007FCA0 /* DDXMLNode.m in Sources */,
 				5F7E44BD1C58F2EE0007FCA0 /* DDXMLElementAdditions.m in Sources */,
 				5F7E44C21C58F2EE0007FCA0 /* DDXMLDocument.m in Sources */,

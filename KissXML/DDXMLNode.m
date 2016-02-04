@@ -391,7 +391,7 @@ static void MarkDeath(void *xmlPtr, DDXMLNode *wrapper);
 #endif
 	
 	if (genericPtr != NULL)
-		return genericPtr->type;
+		return (DDXMLNodeKind)genericPtr->type;
 	else
 		return DDXMLInvalidKind;
 }
