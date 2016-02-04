@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "70A8537565E8EBD1B9D364933832E742DD9D1D11",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "93187B785B619A3B37C0BE33A6E6F2649E4B482B" : 0,
+    "70A8537565E8EBD1B9D364933832E742DD9D1D11" : 0,
+    "E1F5C01245038939AB58BC55BE2351D75FB96813" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9581D57B-3996-466A-AFB2-40C4AA0F4A79",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "93187B785B619A3B37C0BE33A6E6F2649E4B482B" : "..\/..\/..",
+    "70A8537565E8EBD1B9D364933832E742DD9D1D11" : "KissXML\/",
+    "E1F5C01245038939AB58BC55BE2351D75FB96813" : "..\/.."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "KissXML",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "KissXML\/KissXML\/KissXML.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/github.com\/mekentosj\/KissXML.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "70A8537565E8EBD1B9D364933832E742DD9D1D11"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:mekentosj\/papers-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "93187B785B619A3B37C0BE33A6E6F2649E4B482B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:mekentosj\/MTFoundation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E1F5C01245038939AB58BC55BE2351D75FB96813"
+    }
+  ]
+}
