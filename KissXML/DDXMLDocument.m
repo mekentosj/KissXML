@@ -80,60 +80,51 @@
 **/
 - (id)initWithData:(NSData *)data options:(NSUInteger)mask error:(NSError **)error
 {
-        if (data == nil || [data length] == 0)
-        {
-                if (error) *error = [NSError errorWithDomain:@"DDXMLErrorDomain" code:0 userInfo:nil];
-
-                return nil;
+    if (data == nil || [data length] == 0)
+    {
+        if (error) *error = [NSError errorWithDomain:@"DDXMLErrorDomain" code:0 userInfo:nil];
+        
+        return nil;
+    }
+    
+    CTidyFormat inputFormat = CTidyFormatXML;
+    
+    if (mask & DDXMLDocumentTidyHTML)
+    {
+        inputFormat = CTidyFormatHTML;
+    }
+    
+    data = [[CTidy tidy] tidyData:data inputFormat:inputFormat outputFormat:CTidyFormatXML encoding:@"UTF8" configurationHandler:nil diagnostics:nil error:error];
+    
+    if (!data) {
+        return nil;
+    }
+    
+    // Even though xmlKeepBlanksDefault(0) is called in DDXMLNode's initialize method,
+    // it has been documented that this call seem   s to get reset on the iPhone:
+    // http://code.google.com/p/kissxml/issues/detail?id=8
+    //
+    // Therefore, we call it again here just to be safe.
+    xmlKeepBlanksDefault(0);
+    [DDXMLNode installErrorHandlersInThread];
+    xmlDocPtr doc = xmlParseMemory([data bytes], (int)[data length]);
+    if (doc == NULL)
+    {
+#if DDXML_FALLBACK_ON_HTML
+        htmlParserCtxtPtr ctx = htmlCreateMemoryParserCtxt([data bytes], (int)[data length]);
+        int err = htmlParseDocument(ctx);
+        if(err == 0) {
+            doc = ctx->myDoc;
         }
-        #ifdef PAPERS_APP_IOS
-            if (mask & DDXMLDocumentTidyHTML)
-            {
-                data = [[CTidy tidy] tidyData:data
-                                  inputFormat:CTidyFormatHTML
-                                 outputFormat:CTidyFormatXML
-                                     encoding:@"UTF8"
-                                  diagnostics:NULL
-                                        error:error];
-            }
-            else if (mask & DDXMLDocumentTidyXML)
-            {
-                data = [[CTidy tidy] tidyData:data
-                                  inputFormat:CTidyFormatXML
-                                 outputFormat:CTidyFormatXML
-                                     encoding:@"UTF8"
-                                  diagnostics:NULL
-                                        error:error];
-            }
-            if(!data) {
-              return nil;
-            }
-        #endif
-        // Even though xmlKeepBlanksDefault(0) is called in DDXMLNode's initialize method,
-        // it has been documented that this call seem   s to get reset on the iPhone:
-        // http://code.google.com/p/kissxml/issues/detail?id=8
-        //
-        // Therefore, we call it again here just to be safe.
-        xmlKeepBlanksDefault(0);
-        [DDXMLNode installErrorHandlersInThread];
-        xmlDocPtr doc = xmlParseMemory([data bytes], (int)[data length]);
-        if (doc == NULL)
-        {
-            #if DDXML_FALLBACK_ON_HTML
-               htmlParserCtxtPtr ctx = htmlCreateMemoryParserCtxt([data bytes], (int)[data length]);
-               int err = htmlParseDocument(ctx);
-               if(err == 0) {
-                   doc = ctx->myDoc;
-                }
-                htmlFreeParserCtxt(ctx);
-            #endif
-              NSError *lastError = [DDXMLNode lastError];
-              NSDictionary *userInfo = lastError ? [NSDictionary dictionaryWithObjectsAndKeys:lastError, NSUnderlyingErrorKey, nil] : nil;
-              if (error) *error = [NSError errorWithDomain:@"DDXMLErrorDomain" code:1 userInfo:userInfo];
-              return nil;
-        }
-
-        return [self initWithDocPrimitive:doc owner:nil];
+        htmlFreeParserCtxt(ctx);
+#endif
+        NSError *lastError = [DDXMLNode lastError];
+        NSDictionary *userInfo = lastError ? [NSDictionary dictionaryWithObjectsAndKeys:lastError, NSUnderlyingErrorKey, nil] : nil;
+        if (error) *error = [NSError errorWithDomain:@"DDXMLErrorDomain" code:1 userInfo:userInfo];
+        return nil;
+    }
+    
+    return [self initWithDocPrimitive:doc owner:nil];
 }
 
 /**
