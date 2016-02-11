@@ -1,0 +1,3 @@
+[submodule "Carthage/Checkouts/CTidy"]
+	path = Carthage/Checkouts/CTidy
+	url = ssh://git@github.com/mpapp/CTidy.git
