@@ -2,10 +2,7 @@
 #import "NSString+DDXML.h"
 
 @import xml;
-
-#ifdef PAPERS_APP_IOS
-    #import "CTidy.h"
-#endif
+#import <TidyFramework/TidyFramework.h>
 
 #if ! __has_feature(objc_arc)
 #warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
